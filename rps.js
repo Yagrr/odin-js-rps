@@ -1,4 +1,8 @@
-playGame(5);
+let games = prompt("Welcome to Rock Paper Scissors\nPlease enter the number of games you would like to play.");
+while (true) {
+    playGame(games);
+    games = prompt("Welcome back to Rock Paper Scissors\nPlease enter the number of games you would like to play.");
+}
 
 function playGame(nGames) {
     if (nGames < 0) {
