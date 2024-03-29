@@ -17,8 +17,8 @@ function playGame(nGames) {
             ++player_score;
         } else if (round_result == -1) {
             ++ai_score;
-        } else{
-            continue;
+        } else {
+            ++nGames;
         }
         alert("Round: " + (i+1) + " out of " + nGames + "\nPlayer: " + player_score + " AI: " + ai_score)
     }
@@ -72,7 +72,7 @@ function playRound(player_choice, computer_choice) {
     let round_result =   player_choice - computer_choice; 
     // Win if round_result = -2 or 1 because RPS choices are integers 1,2,3. Make 3x3 table to see results
     if ( round_result  == 0 ) {
-        alert("\nThis round is a tie!\n"+ "Player: " + choices[player_choice - 1] + "\nAI: " + choices[computer_choice-1]);
+        alert("\nThis round is a tie! (Adding one more round!)\n"+ "Player: " + choices[player_choice - 1] + "\nAI: " + choices[computer_choice-1]);
         return 0
     } else if ([-2,1].includes(round_result)) {
         alert("\nYou win the round!\n"+ "Player: " + choices[player_choice - 1] + "\nAI: " + choices[computer_choice-1]);
