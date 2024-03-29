@@ -10,7 +10,7 @@ function playGame(nGames) {
         return;
     }
     let player_score = 0;
-    let ai_score = 0;
+    let computer_score = 0;
     let round_result = 0;
 
     for (let i = 0; i < nGames; i++) {
@@ -20,16 +20,16 @@ function playGame(nGames) {
         if (round_result == 1) {
             ++player_score;
         } else if (round_result == -1) {
-            ++ai_score;
+            ++computer_score;
         } else {
             ++nGames;
         }
-        alert("Round: " + (i+1) + " out of " + nGames + "\nPlayer: " + player_score + " AI: " + ai_score)
+        alert("Round: " + (i+1) + " out of " + nGames + "\nPlayer: " + player_score + " AI: " + computer_score)
     }
     
-    if (player_score > ai_score) {
+    if (player_score > computer_score) {
         alert("Player wins the game!");
-    } else if (player_score < ai_score) {
+    } else if (player_score < computer_score) {
         alert("Player loses the game!");
     } else {
         alert("The game is a tie!");
@@ -44,21 +44,21 @@ function getPlayerChoice() {
 
     while (validInput === false) {
 
-        let userChoice = prompt("1) Rock 2) Paper 3) Scissors\n Please enter your choice (1-3)");
-        userChoice = userChoice.toLowerCase();
-        wordCheck = ["r","p","s"].indexOf(userChoice[0]);
-        numCheck = ["1","2","3"].indexOf(userChoice[0]);
+        let playerChoice = prompt("1) Rock 2) Paper 3) Scissors\n Please enter your choice (1-3)");
+        playerChoice = userChoice.toLowerCase();
+        wordCheck = ["r","p","s"].indexOf(playerChoice[0]);
+        numCheck = ["1","2","3"].indexOf(playerChoice[0]);
 
 
         if ( wordCheck >= 0 || numCheck >= 0 ) {
             validInput = true;
-            input = Number(userChoice[0]);
+            input = Number(playerChoice[0]);
         } 
         else {
             alert("Please provide a valid input.\n");
         }
         
-        // Convert userChoice word to number
+        // Convert playerChoice word to number for easy interpretation
         if ( wordCheck >= 0 ) {
             input = wordCheck + 1 ; 
         }
