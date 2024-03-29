@@ -70,7 +70,7 @@ function getComputerChoice() {
 function playRound(player_choice, computer_choice) {
     let choices = ["Rock","Paper","Scissors"]
     let round_result =   player_choice - computer_choice; 
-    // Results - Win conditions if round_result == -2 or 1
+    // Win if round_result = -2 or 1 because RPS choices are integers 1,2,3. Make 3x3 table to see results
     if ( round_result  == 0 ) {
         alert("\nThis round is a tie!\n"+ "Player: " + choices[player_choice - 1] + "\nAI: " + choices[computer_choice-1]);
         return 0
