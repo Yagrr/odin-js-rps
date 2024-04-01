@@ -1,20 +1,29 @@
-let games = prompt("Welcome to Rock Paper Scissors\nPlease enter the number of games you would like to play.");
-while (true) {
-    playGame(games);
-    games = prompt("Welcome back to Rock Paper Scissors\nPlease enter the number of games you would like to play.");
-}
+let player_choice = 0;
+const btn_choices = document.querySelectorAll(".choice");
 
-function playGame(nGames) {
-    if (nGames < 0) {
-        alert("Invalid number of games");
-        return;
-    }
+btn_choices.forEach((choice) => {
+    choice.addEventListener("click", () => {
+        switch(choice.textContent) {
+            case "Rock":
+                player_choice = 1;
+                break;
+            case "Paper":
+                player_choice = 2;
+                break;
+            case "Scissors":
+                player_choice = 3;
+                break;
+        }
+    });
+});
+
+
+function playGame(player_choice) {
     let player_score = 0;
     let computer_score = 0;
     let round_result = 0;
 
     for (let i = 0; i < nGames; i++) {
-        let player_choice =  getPlayerChoice();
         let computer_choice = getComputerChoice();
         round_result = playRound(player_choice,computer_choice);
         if (round_result == 1) {
@@ -35,37 +44,6 @@ function playGame(nGames) {
         alert("The game is a tie!");
     }
 }
-
-
-function getPlayerChoice() {
-    let validInput = false;
-    let wordCheck = numCheck = -1;
-    let input = null;
-
-    while (validInput === false) {
-
-        let playerChoice = prompt("1) Rock 2) Paper 3) Scissors\n Please enter your choice (1-3)");
-        playerChoice = userChoice.toLowerCase();
-        wordCheck = ["r","p","s"].indexOf(playerChoice[0]);
-        numCheck = ["1","2","3"].indexOf(playerChoice[0]);
-
-
-        if ( wordCheck >= 0 || numCheck >= 0 ) {
-            validInput = true;
-            input = Number(playerChoice[0]);
-        } 
-        else {
-            alert("Please provide a valid input.\n");
-        }
-        
-        // Convert playerChoice word to number for easy interpretation
-        if ( wordCheck >= 0 ) {
-            input = wordCheck + 1 ; 
-        }
-    }
-    return input;
-}
-
 
 function getComputerChoice() {
     return  Math.floor(Math.random() * 3) + 1 ;
