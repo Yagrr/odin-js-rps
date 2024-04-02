@@ -1,5 +1,3 @@
-// To do: add error handling (i.e, player_choice)
-
 const input_nGames = document.querySelector('input');
 const modal_startGame = document.querySelector('#modal_start');
 const modal_endGame = document.querySelector('#modal_end');
@@ -18,8 +16,6 @@ let player_score = 0;
 let computer_score = 0;
 let round_result = 0;
 let player_choice = 0;
-
-toggleModal(modal_endGame);
 
 playButton.addEventListener('click', () => {
     nGames = Number(input_nGames.value);
