@@ -7,14 +7,32 @@
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
-        <div class="header">Rock Paper Scissors</div>
-        <div class="pregame">
-            <label for="nGames">Welcome to Rock Paper Scissors.<br>Please enter the number of games you would like to play.</label>
-                <input type="number" min="0" name="nGames">
-            <button>Play Game</button>
+        <span id="backdrop"></span>
+
+        <div class="modal" id="modal_start">
+            <div class="modal-content">
+                <label for="nGames">Welcome to Rock Paper Scissors.<br>Please enter the number of games you would like to play.</label>
+                <input type="number" min="1" name="nGames" value="1">
+                <button id="play-game">Play Game</button>
+            </div>
         </div>
 
-        <div class="scores"></div>
+
+        <div class="modal" id="modal_end">
+            <div class="modal-content">
+                <div id="end-game"></div>
+                <button id="play-again">Play again</button>
+            </div>
+        </div>
+
+        <div class="header">Rock Paper Scissors</div>
+
+        <div class="game-board">
+            <div id="round-element">Round: 1 out of 1</div>
+            <div id="player-element">Player: 0</div>
+            <div id="computer-element">AI: 0</div>
+            <div id="game-state">START GAME</div>
+        </div>
 
         <div class="choices">
             <button class="choice">Rock</button>
