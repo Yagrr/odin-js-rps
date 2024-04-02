@@ -1,3 +1,14 @@
+html {
+    background: rgb(64,54,89);
+    background: linear-gradient(180deg, rgba(64,54,89,1) 0%, rgba(45,37,65,1) 37%, rgba(27,22,39,1) 100%); 
+}
+
+body {
+   margin-top: 250px; 
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   color: white;
+}
+
 #backdrop {
   display:block;
   position: fixed; /* Stay in place */
@@ -11,6 +22,106 @@
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-#modal_end {
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.modal-content {
+    color: black;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    max-width:500px;
+    font-size: 25px;
+    padding: 32px 50px;
+    gap: 10px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    position: fixed;
+    top: 65%;
+    left: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -150%); 
+}
+
+input {
+    width: 40px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.play {
+    font-size: 15px;
+}
+
+#modal_content_end {
+    top:53%;
+}
+
+#modal-end {
     display:none;
+}
+
+.page-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 45px;
+}
+
+.header {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#score_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-grow: 1 ;
+    gap: 80px;
+    padding: 20px;
+}
+
+.game-board {
+    min-width: 600px;
+    font-size: 25px;
+}
+
+.element {
+    font-weight: bold;
+}
+
+.choices {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.choice {
+    font-size: 25px;
+    width: 150px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 72px;
+    bottom: 0;
+    width:100%;
 }
