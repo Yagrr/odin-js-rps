@@ -68,7 +68,6 @@ btn_choices.forEach((choice) => {
                 player_choice = 3;
                 break;
         }
-        // change to playRound
         if (nRounds < nGames-1) {
             let computer_choice = getComputerChoice();
             round_result = playRound(player_choice,computer_choice);
@@ -109,7 +108,7 @@ function getComputerChoice() {
 function playRound(player_choice, computer_choice) {
     let choices = ["Rock","Paper","Scissors"]
     let round_result =   player_choice - computer_choice; 
-    // Win if round_result = -2 or 1 because RPS choices are integers 1,2,3. Make 3x3 table to see results
+    // Win if round_result = -2 or 1 because RPS choices are integers 1,2,3 such that Paper vs. Rock is 2-1 = 1
     if ( round_result  == 0 ) {
         game_state.textContent = `This round is a tie!\nPlayer:  ${choices[player_choice - 1]}\nAI: ${choices[computer_choice-1]}`;
         return 0
