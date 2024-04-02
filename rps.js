@@ -1,6 +1,6 @@
 const input_nGames = document.querySelector('input');
-const modal_startGame = document.querySelector('#modal_start');
-const modal_endGame = document.querySelector('#modal_end');
+const modal_startGame = document.querySelector('#modal-start');
+const modal_endGame = document.querySelector('#modal-end');
 const modal_endText = document.querySelector('#end-game')
 const playButton = document.querySelector('#play-game');
 const playAgain = document.querySelector('#play-again');
@@ -9,6 +9,7 @@ const round_element = document.querySelector("#round-element");
 const player_element = document.querySelector("#player-element");
 const computer_element = document.querySelector("#computer-element");
 const game_state = document.querySelector("#game-state");
+const game_choices = document.querySelector("#game-choices");
 
 let nGames = 1;
 let nRounds = 0;
@@ -36,13 +37,13 @@ playAgain.addEventListener('click', () => {
     player_element.textContent = `Player: 0`;
     computer_element.textContent = `AI: 0`;
     game_state.textContent = "START GAME";
-
+    game_choices.textContent = "_______";
 });
 
 function toggleModal(modalDiv) {
     const backdrop = document.querySelector('#backdrop');
     if (modalDiv.style.display === 'none') {
-        modalDiv.style.display = "block";
+        modalDiv.style.display = "flex";
         backdrop.style.display = "block";
     } else {
         modalDiv.style.display = "none";
@@ -102,17 +103,18 @@ function getComputerChoice() {
 }
 
 function playRound(player_choice, computer_choice) {
-    let choices = ["Rock","Paper","Scissors"]
+    let choices = ["rock","paper","scissors"]
     let round_result =   player_choice - computer_choice; 
     // Win if round_result = -2 or 1 because RPS choices are integers 1,2,3 such that Paper vs. Rock is 2-1 = 1
+    game_choices.textContent = `Player:  ${choices[player_choice - 1]} AI: ${choices[computer_choice-1]}`;
     if ( round_result  == 0 ) {
-        game_state.textContent = `This round is a tie!\nPlayer:  ${choices[player_choice - 1]}\nAI: ${choices[computer_choice-1]}`;
+        game_state.textContent = `This round is a tie!`;
         return 0
     } else if ([-2,1].includes(round_result)) {
-        game_state.textContent = `You win this round!\nPlayer:  ${choices[player_choice - 1]}\nAI: ${choices[computer_choice-1]}`;
+        game_state.textContent = `You win this round!`;
         return 1;
     } else {
-        game_state.textContent = `You lose this round!\nPlayer:  ${choices[player_choice - 1]}\nAI: ${choices[computer_choice-1]}`;
+        game_state.textContent = `You lose this round!`;
         return -1;
     } 
 }
