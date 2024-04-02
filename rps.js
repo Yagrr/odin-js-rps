@@ -70,8 +70,8 @@ btn_choices.forEach((choice) => {
         if (nRounds < nGames-1) {
             let computer_choice = getComputerChoice();
             round_result = playRound(player_choice,computer_choice);
-            updateElements();
             ++nRounds;
+            updateElements();
         } else {
             let computer_choice = getComputerChoice();
             round_result = playRound(player_choice,computer_choice);
