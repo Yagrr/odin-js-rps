@@ -7,47 +7,48 @@
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
-        <div id="backdrop">
-            <div class="modal" id="modal-start">
-                <div class="modal-content" id="modal-content-end">
-                    <label for="nGames">Welcome to Rock Paper Scissors.<br>Please enter the number of games you would like to play.</label>
-                    <div class="modal-input">
-                        <input type="number" min="1" name="nGames" value="1">
-                        <button class="play" id="play-game">Play Game</button>
+            <div id="backdrop">
+                <div class="modal" id="modal-start">
+                    <div class="modal-content" id="modal-content-end">
+                        <label for="nGames">Welcome to Rock Paper Scissors.<br>Please enter the number of games you would like to play.</label>
+                        <div class="modal-input">
+                            <input type="number" min="1" name="nGames" value="1">
+                            <button class="play" id="play-game">Play Game</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal" id="modal-end">
+                    <div class="modal-content" id="modal_content_end">
+                        <div id="end-game"></div>
+                        <button class="play" id="play-again">Play again</button>
                     </div>
                 </div>
             </div>
 
-            <div class="modal" id="modal-end">
-                <div class="modal-content" id="modal_content_end">
-                    <div id="end-game"></div>
-                    <button class="play" id="play-again">Play again</button>
+
+            <div class="page-content">
+                <div class="header">「Rock Paper Scissors」</div>
+                <div class="game-board">
+                    <div class="element" id="round-element">Round: 1 out of 1</div>
+                    <div id="score_wrapper">
+                        <div class="element" id="player-element">Player: 0</div>
+                        <div class="element"id="computer-element">AI: 0</div>
+                    </div>
+                    <div class="result" id="game-state">START GAME</div>
+                    <div class="result" id="game-choices">_______</div>
                 </div>
-            </div>
-        </div>
 
-
-        <div class="page-content">
-            <div class="header">「Rock Paper Scissors」</div>
-            <div class="game-board">
-                <div class="element" id="round-element">Round: 1 out of 1</div>
-                <div id="score_wrapper">
-                    <div class="element" id="player-element">Player: 0</div>
-                    <div class="element"id="computer-element">AI: 0</div>
+                <div class="choices">
+                    <button class="choice">Rock&nbsp;🪨</button>
+                    <button class="choice">Paper&nbsp;📰</button>
+                    <button class="choice">Scissors&nbsp;✂️</button>
                 </div>
-                <div class="result" id="game-state">START GAME</div>
-                <div class="result" id="game-choices">_______</div>
+
+                <div class="footer">Created by&nbsp;<a class="yagrr" href="https://github.com/Yagrr/odin-js-rps">Yagrr</a></div>
             </div>
 
-            <div class="choices">
-                <button class="choice">Rock</button>
-                <button class="choice">Paper</button>
-                <button class="choice">Scissors</button>
-            </div>
-
-            <div class="footer">Created by &nbsp;<a style="font-weight: bold; text-decoration: none; color: white;" href="https://github.com/Yagrr/odin-js-rps">Yagrr</a></div>
-        </div>
-
+        <div class="bg"></div>
     </body>
     <script src="rps.js"></script>
 </html>
